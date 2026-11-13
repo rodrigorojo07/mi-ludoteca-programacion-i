@@ -1,6 +1,10 @@
 package presentacion;
 
 import dominio.Videojuego2;
+import dominio.VideojuegoDeportivo;
+import dominio.VideojuegoEstrategia;
+import dominio.VideojuegoOnline;
+import dominio.VideojuegoRol;
 import dominio.Ludoteca;
 
 public class Main {
@@ -8,14 +12,16 @@ public class Main {
         // Crear un nuevo videojuego
         Ludoteca miLudoteca = new Ludoteca();
 
-        Videojuego2 juego1 = new Videojuego2("Call of Duty", "PC", 85, 500);
-        Videojuego2 juego2 = new Videojuego2("Clash Royale: Wild Hunt", "Mobile", 93, 200);
-        Videojuego2 juego3 = new Videojuego2("Brawl Stars", "Mobile", 90, 100);
+        VideojuegoRol juego1 = new VideojuegoRol("WOW", "PC", 85, 500,300);
+        VideojuegoOnline juego2 = new VideojuegoOnline("Clash Royale: Wild Hunt", "Mobile", 93, 200,5000000);
+        VideojuegoEstrategia juego3 = new VideojuegoEstrategia("Brawl Stars", "Mobile", 90, 100,10);
+        VideojuegoDeportivo juego4 = new VideojuegoDeportivo("Brawl Stars", "Mobile", 90, 100, "Fútbol");
 
         // Agregar videojuegos a la ludoteca
         miLudoteca.agregar(juego1);
         miLudoteca.agregar(juego2);
         miLudoteca.agregar(juego3);
+        miLudoteca.agregar(juego4);
 
         //Comprobar Buscar por título
         String tituloBuscado = "Clash Royale: Wild Hunt"; //Buscamos titulos
