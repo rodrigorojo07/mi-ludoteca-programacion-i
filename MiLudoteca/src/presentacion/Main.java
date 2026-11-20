@@ -28,12 +28,18 @@ public class Main {
         String resultadoBusqueda = miLudoteca.buscarPorTitulo(tituloBuscado);
         if (resultadoBusqueda != null) { //Si no es nulo, se encontró el juego
             System.out.println("Videojuego encontrado: " + resultadoBusqueda);
-        } else {
+        } 
+        else {
             System.out.println("Videojuego no encontrado."); // Si es nulo, no se encontró el juego
-    }
+        }
         // Mostrar la información de la ludoteca
         System.out.println("Ludoteca:");
         System.out.println(miLudoteca.toString());
+
+        // calacularPUntuaacionMedia 
+        double comprobarMedia = miLudoteca.calcularPuntuacionMedia();
+        System.out.print("La media es: "+ comprobarMedia);
     }
+
 }
 

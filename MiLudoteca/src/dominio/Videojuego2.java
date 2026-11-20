@@ -91,4 +91,11 @@ public class Videojuego2 {
     public int hashCode() {
         return Objects.hash(titulo, plataforma, puntuacion, horasJugadas);
     }
+    public String mostrarFicha(){
+        return toString();
+        
+    }
+    
+
+    
 }

@@ -10,7 +10,7 @@ public class Ludoteca {
         ludoteca1 = Ludoteca_;
     }
 
-    //REQ 3 
+    //REQ 3 - REQ 4 (Reto 10)
     public Ludoteca (){} //Crear un contructor vacío para poder crear un objeto Ludoteca sin necesidad de pasarle un ArrayList de videojuegos
     public Ludoteca agregar(Videojuego2 videojuego){ //Crear método para agregar videojuegos a la Ludoteca, recibe objeto y lo va agregando a la lista.
         ludoteca1.add(videojuego); // Agrega con función add
@@ -26,17 +26,37 @@ public class Ludoteca {
         return resultado;
     }
 
+    public void listar(){
+        for (Videojuego2 videojuego : ludoteca1){
+            System.out.println(videojuego.mostrarFicha());
+            
+        }
+    }
     //REQ 5
-    public String buscarPorTitulo(String titulo){ //Recibe un título y busca en la lista de videojuegos
-        for (Videojuego2 videojuego : ludoteca1){ //Recorre la lista de videojuegos
-            if (videojuego.getTitulo().equals(titulo)){ //Compara el título del videojuego con el título recibido
-                return videojuego + "\n"; //Devuelve el videojuego si son iguales
+    public String buscarPorTitulo(String titulo){ 
+        for (Videojuego2 videojuego : ludoteca1){ 
+            if (videojuego.getTitulo().equalsIgnoreCase(titulo)){ 
+                return videojuego + "\n"; 
             }
         }
-        return null; //Devuelve null si no encuentra el videojuego
+        return null; 
     }
-
-
+    public double calcularPuntuacionMedia(){
+        
+        double resultado = 0; 
+        for (Videojuego2 videojuego : ludoteca1){
+            resultado += videojuego.getPuntuacion() ;
+        }
+        return resultado/ludoteca1.size();
+    }
+    /* public String obtenerMejorValorado(){
+         for (Videojuego2 videojuego : ludoteca1){ 
+            if (videojuego.getPuntuacion()){ 
+                return videojuego + "\n"; 
+            }
+        }
+    }
+     */
 }
 
     
